@@ -24,8 +24,10 @@ export const BentoGridItem = ({
   title,
   description,
   header,
-  icon,
-  id,
+  img,
+  imgClassName,
+  titleClassName,
+  spareImg,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -33,17 +35,24 @@ export const BentoGridItem = ({
   header?: React.ReactNode;
   icon?: React.ReactNode;
   id: number;
+  img?: string;
+  imgClassName?: string;
+  titleClassName?: string;
+  spareImg?: string;
 }) => {
   return (
     <div
       className={cn(
-        "row-span-1 relative rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border   border-red-400 justify-between flex flex-col space-y-4",
+        "row-span-1 relative rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent  justify-between flex flex-col space-y-4",
         className
       )}
+      style={{
+        background: "rgb(2,0,36)",
+        backgroundColor:
+          "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,40,78,1) 35%, rgba(0,212,255,1) 100%)",
+      }}
     >
-      {header}
       <div className="group-hover/bento:translate-x-2 transition duration-200">
-        {icon}
         <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
           {title}
         </div>
